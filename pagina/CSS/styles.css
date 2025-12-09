@@ -1,0 +1,94 @@
+/* Variables de color */
+:root{
+  --navy: #0A2A43;
+  --gold: #D4A251;
+  --dark: #1F3D59;
+  --light: #F5F7FA;
+  --white: #FFFFFF;
+  --max-width: 1100px;
+  --header-height: 140px;
+}
+
+*{box-sizing:border-box}
+body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:var(--dark); background:var(--light); display:flex; flex-direction:column; min-height:100vh}
+.container{max-width:var(--max-width); margin:0 auto; padding:2rem;}
+main{flex:1}
+
+/* Nav */
+.site-header{background:var(--white); position:sticky; top:0; z-index:50; box-shadow:0 1px 6px rgba(10,42,67,0.08);}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.9rem 1rem; min-height:140px}
+.nav-brand{font-weight:700; color:var(--navy); display:flex; align-items:center; gap:0.6rem; text-decoration:none}
+.nav-brand .logo{height:120px; width:auto; display:block}
+.nav-list{list-style:none; display:flex; gap:1rem; margin:0; padding:0}
+.nav-list a{display:block; padding:0.5rem 0.75rem; color:var(--dark); text-decoration:none; border-radius:6px}
+.nav-list a:hover, .nav-list a.active{background:linear-gradient(90deg,var(--gold),#e5c188); color:var(--navy);}
+.nav-toggle{display:none; background:none; border:1px solid #eee; padding:0.5rem; border-radius:6px}
+
+/* Hero / banner */
+.hero{min-height:calc(100vh - var(--header-height)); display:flex; align-items:center; justify-content:center; color:var(--white); background:linear-gradient(135deg, var(--navy) 0%, var(--dark) 50%, rgba(13,46,77,0.85) 100%); padding:0; position:relative}
+.hero-content{max-width:900px; margin:0 auto; text-align:center; padding:4rem 1rem}
+/* Hero logo banner: centra el logo como banner principal */
+.hero-logo{display:flex; align-items:center; justify-content:center; padding:2rem 1rem; min-height:300px}
+.hero-logo img{max-height:calc(100vh - var(--header-height) - 80px); width:auto; display:block}
+
+.hero-cta{position:absolute; left:50%; transform:translateX(-50%); bottom:48px}
+.hero-cta .btn{padding:0.7rem 1.1rem}
+
+@media (max-width:800px){
+  .hero-cta{bottom:24px}
+}
+
+@media (max-width:800px){
+  :root{--header-height:96px}
+  .nav-brand .logo{height:80px}
+  .nav{padding:0.6rem 1rem; min-height:96px}
+  .hero-logo{min-height:180px}
+  .hero-logo img{max-height:calc(100vh - 96px - 60px)}
+  .hero-cta{bottom:24px}
+}
+.hero h1{font-size:2.25rem; margin:0 0 1rem}
+.lead{font-size:1.125rem; margin-bottom:1.25rem}
+.btn{display:inline-block; background:transparent; border:2px solid var(--gold); color:var(--gold); padding:0.6rem 1rem; border-radius:8px; text-decoration:none}
+.btn-primary{background:var(--gold); color:var(--navy); border-color:var(--gold)}
+
+/* Sections */
+.section{padding:4rem 0; background:var(--white);}
+.section.alt{background:#fbfbfe}
+h2{color:var(--navy)}
+
+/* Team grid */
+.team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.25rem; margin-top:1rem}
+.member{background:var(--light); padding:1rem; border-radius:10px; text-align:center}
+.avatar{width:64px; height:64px; background:var(--gold); color:var(--navy); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:0.5rem}
+
+/* Services */
+.services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem}
+.service-link{display:block; text-decoration:none; color:inherit}
+.service-card{padding:0; border-radius:10px; background:var(--white); border:1px solid rgba(10,42,67,0.04); overflow:hidden; transition:transform .18s ease, box-shadow .18s ease}
+.service-card:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(10,42,67,0.12)}
+.service-img{width:100%; height:160px; object-fit:cover; display:block}
+.service-card h3{margin:0.75rem 1rem 0.25rem}
+.service-card p{margin:0 1rem 1rem; color:var(--dark); font-size:0.95rem}
+
+.case-quote{margin-top:1rem; padding:1rem; background:linear-gradient(90deg,#fff7e6, #fbf4ea); border-left:4px solid var(--gold)}
+
+/* Contact form */
+.contact-form{display:grid; gap:0.75rem; max-width:600px}
+.contact-form label{display:flex; flex-direction:column; font-size:0.9rem}
+.contact-form input, .contact-form textarea{padding:0.6rem; border-radius:6px; border:1px solid #e1e6ee}
+
+/* Footer */
+.site-footer{background:var(--navy); color:var(--white); padding:1rem 0; text-align:center}
+
+/* Responsive */
+@media (max-width:800px){
+  .nav-list{display:none; position:absolute; left:0; right:0; top:56px; background:var(--white); flex-direction:column; padding:1rem; box-shadow:0 6px 20px rgba(10,42,67,0.08)}
+  .nav-list.show{display:flex}
+  .nav-toggle{display:block}
+  .hero h1{font-size:1.6rem}
+  .nav-brand .logo{height:80px}
+  .nav{padding:0.6rem 1rem; min-height:96px}
+}
+
+/* Small helpers */
+.hidden{display:none}
