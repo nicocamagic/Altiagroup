@@ -154,3 +154,11 @@ h2{color:var(--navy)}
   color:#aaa;
   margin-bottom:0;
 }
+
+
+/* Asegura que la imagen tenga al menos 400px de ancho, si el espacio lo permite */
+.img-fluid {
+    min-width: 500px;
+    max-width: 100%;
+    height: auto; 
+}
