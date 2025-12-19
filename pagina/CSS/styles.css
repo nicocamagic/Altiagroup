@@ -43,9 +43,9 @@ main{flex:1}
   :root{--header-height:96px}
   .nav-brand .logo{height:80px}
   .nav{padding:0.6rem 1rem; min-height:96px}
-  .hero-logo{min-height:180px}
-  .hero-logo img{max-height:calc(100vh - 96px - 60px)}
-  .hero-cta{bottom:24px}
+  .hero-logo{min-height:50px}
+  .hero-logo img{max-height:calc(100vh - var(--header-height) - 40px); width: auto;}
+  .hero-cta{bottom:70px}
 }
 .hero h1{font-size:2.25rem; margin:0 0 1rem}
 .lead{font-size:1.125rem; margin-bottom:1.25rem}
